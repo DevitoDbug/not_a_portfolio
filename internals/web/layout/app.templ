@@ -1,0 +1,19 @@
+package layout
+
+import "github.com/DevitoDbug/portfolio/internals/web/components/nav"
+
+templ App() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<title>David</title>
+			<link href="./../static/style.css" rel="stylesheet"/>
+		</head>
+		<body>
+			@nav.Nav()
+			{ children... }
+		</body>
+	</html>
+}
