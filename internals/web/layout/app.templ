@@ -1,6 +1,6 @@
 package layout
 
-import "github.com/DevitoDbug/portfolio/internals/web/components/nav"
+import "github.com/DevitoDbug/portfolio/internals/web/components"
 
 templ App() {
 	<!DOCTYPE html>
@@ -9,11 +9,16 @@ templ App() {
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<title>David</title>
-			<link href="./../static/style.css" rel="stylesheet"/>
+			<link href="/static/css/style.css" rel="stylesheet"/>
 		</head>
-		<body>
-			@nav.Nav()
-			{ children... }
+		<body
+			style="font-family: 'EB Garamond', serif;"
+			class="flex w-screen bg-yellow-50 flex-col items-center"
+		>
+			<div class="w-full md:w-[45%] px-2 md:p-4">
+				@nav.Nav()
+				{ children... }
+			</div>
 		</body>
 	</html>
 }

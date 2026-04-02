@@ -1,6 +1,11 @@
 package api
 
-import "net/http"
+import (
+	"net/http"
 
-func (a *Api) AboutHandler(w http.Response, r *http.Request) {
+	"github.com/DevitoDbug/portfolio/internals/web/pages"
+)
+
+func (a *Api) AboutHandler(w http.ResponseWriter, r *http.Request) {
+	_ = pages.AboutPage().Render(r.Context(), w)
 }

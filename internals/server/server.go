@@ -52,11 +52,12 @@ func (s *Server) StartServer() error {
 	s.router.Use(middleware.Logger)
 	s.router.Use(middleware.Recoverer)
 
-	fileServer := http.FileServer(http.Dir("../web/static"))
+	fileServer := http.FileServer(http.Dir("./internals/web/static"))
 	s.router.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
 	s.router.Group(func(r chi.Router) {
 		r.Get("/", s.Api.IndexHandler)
+		r.Get("/about", s.Api.AboutHandler)
 	})
 
 	return http.ListenAndServe(s.Port, s.router)
