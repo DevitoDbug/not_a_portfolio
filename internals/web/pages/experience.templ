@@ -1,0 +1,31 @@
+package pages
+
+templ ExperienceComponent(experience Experience) {
+	<div class="flex flex-col gap-6 text-2xl">
+		<div class="flex flex-col gap-1">
+			<h2 class="text-3xl font-bold">
+				{ experience.JobName }
+			</h2>
+			<p class="font-jetbrains-mono">
+				{ experience.TimePeriod }
+			</p>
+			<div class="font-garamond flex flex-col">
+				for _,link := range experience.Links {
+					<a
+						href={ link }
+						class="underline hover:text-[#ba3925] text-wrap"
+					>
+						{ link }
+					</a>
+				}
+			</div>
+		</div>
+		<div class="flex flex-col gap-2">
+			for _,description := range experience.Description {
+				<div>
+					{ description }
+				</div>
+			}
+		</div>
+	</div>
+}

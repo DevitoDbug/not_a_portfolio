@@ -29,7 +29,7 @@ func Nav() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<nav class=\"flex w-full text-2xl justify-between py-3\"><a class=\"underline\" href=\"/about\"><h1 class=\"\">david</h1></a><ul class=\"flex gap-4\"><li><a class=\"hover:underline\" href=\"/about\">About</a></li><li><a class=\"hover:underline\" href=\"/about\">Resume</a></li></ul></nav>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<nav class=\"flex w-full text-2xl justify-between py-5\"><a class=\"underline\" href=\"/\"><h1 class=\"text-3xl\">david</h1></a><ul class=\"flex gap-4\"><li><a class=\"hover:underline\" href=\"/about\">About</a></li><li><a class=\"hover:underline\" href=\"/resume\">Resume</a></li></ul></nav>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

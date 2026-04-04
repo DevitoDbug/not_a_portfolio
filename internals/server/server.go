@@ -58,6 +58,7 @@ func (s *Server) StartServer() error {
 	s.router.Group(func(r chi.Router) {
 		r.Get("/", s.Api.IndexHandler)
 		r.Get("/about", s.Api.AboutHandler)
+		r.Get("/resume", s.Api.ResumeHandler)
 	})
 
 	return http.ListenAndServe(s.Port, s.router)

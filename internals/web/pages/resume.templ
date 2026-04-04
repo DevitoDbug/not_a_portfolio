@@ -1,0 +1,105 @@
+package pages
+
+import "github.com/DevitoDbug/portfolio/internals/web/layout"
+
+type (
+	Link      string
+	Paragraph string
+)
+
+type Experience struct {
+	JobName     string
+	TimePeriod  string
+	Links       []Link
+	Description []Paragraph
+}
+
+templ ResumePage(experinces []Experience) {
+	@layout.App() {
+		<div class="flex flex-col gap-4 ">
+			<div class="flex flex-col font-sans-open">
+				<h2 class="text-[#ba3925] text-4xl">
+					Resume
+				</h2>
+				<p class="text-4xl ">
+					April 2, 2025     
+				</p>
+			</div>
+			<div class="font-garamond text-2xl">
+				<p>
+					Welcome to my resume! Detailed below is my journey, the good, the bad and the current.
+					To summarise my experience, I describe myself as a backend developer, only because I enjoy backend development
+					more than I do on the other side of the stack, but I'm equally capable. I currently have a huge interest 
+					in Golang and cloud infrastructure with experience in building financial apps, 
+					marketing sites, e-commerce platforms and the occasional weird "I want to be C developer so I'll make my 
+					life  more difficult that it already is" projects.
+				</p>
+			</div>
+			<div class="flex flex-col gap-5 text-2xl mt-10">
+				<div class="flex flex-col">
+					<h3 class="font-bold">
+						Name
+					</h3>
+					<span>David Ochieng</span>
+				</div>
+				<div class="flex flex-col">
+					<h3 class="font-bold">
+						GitHub
+					</h3>
+					<a
+						href="https://github.com/DevitoDbug"
+						class="underline hover:text-[#ba3925]"
+					>
+						https://github.com/DevitoDbug
+					</a>
+				</div>
+				<div class="flex flex-col">
+					<h3 class="font-bold">
+						Email
+					</h3>
+					<a
+						href="mailto:davidochiengy@gmail.com?subject=Hello&body=Hi David"
+						class="underline hover:text-[#ba3925]"
+					>
+						davidochiengy@gmail.com
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-col gap-5 text-2xl mt-10">
+				<h2 class="text-[#ba3925] text-4xl">
+					Core Competencies
+				</h2>
+				<ul class="list-disc pl-6">
+					<li>Golang mastery for building scalable backend systems</li>
+					<li>Building responsive, production-ready React applications</li>
+					<li>Designing clean, testable architectures</li>
+					<li>Shipping reliable software with strong testing and CI/CD</li>
+					<li>Building real-world financial and e-commerce platforms</li>
+					<li>Integrating complex systems (payments, APIs, authentication)</li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-5 text-2xl mt-10">
+				<h2 class="text-[#ba3925] text-4xl">
+					Education
+				</h2>
+				<ul class="list-disc pl-6">
+					<li>
+						2021-2025, Bachelor of Science (Computer Science)
+						<br/>
+						<span class="font-bold">Kenyatta University</span>, Kenya
+					</li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-5 text-2xl mt-10">
+				<h2 class="text-[#ba3925] text-4xl">
+					Professional Experience
+				</h2>
+			</div>
+			<div class="flex flex-col gap-6">
+				for _,experince := range experinces {
+					@ExperienceComponent(experince)
+				}
+			</div>
+		</div>
+	}
+}
