@@ -1,0 +1,14 @@
+package pages
+
+import "github.com/DevitoDbug/portfolio/internals/web/layout"
+
+templ BlogsPage(blogs []string) {
+	@layout.App() {
+		<div>
+			<h1>Be blogs page</h1>
+			for index,blog := range blogs {
+				<p>{ index }. { blog }</p>
+			}
+		</div>
+	}
+}

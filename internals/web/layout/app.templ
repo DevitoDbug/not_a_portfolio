@@ -3,6 +3,13 @@ package layout
 import "github.com/DevitoDbug/portfolio/internals/web/components"
 
 templ App() {
+	{{
+		navItems := []components.NavItemType{
+			{Text: "About", Link: "/about"},
+			{Text: "Blogs", Link: "/blogs"},
+			{Text: "Resume", Link: "/resume"},
+		}
+	}}
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -16,7 +23,7 @@ templ App() {
 			class="flex w-full bg-yellow-50 flex-col items-center pb-5"
 		>
 			<div class="w-full lg:w-[45%] p-4">
-				@nav.Nav()
+				@components.Nav(navItems)
 				{ children... }
 			</div>
 		</body>

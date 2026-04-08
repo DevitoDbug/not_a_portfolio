@@ -59,6 +59,8 @@ func (s *Server) StartServer() error {
 		r.Get("/", s.Api.IndexHandler)
 		r.Get("/about", s.Api.AboutHandler)
 		r.Get("/resume", s.Api.ResumeHandler)
+		r.Get("/blogs", s.Api.BlogsHandler)
+		r.Get("/blogs/{name}", s.Api.BlogHandler)
 	})
 
 	return http.ListenAndServe(s.Port, s.router)

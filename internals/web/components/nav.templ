@@ -1,21 +1,19 @@
-package nav 
+package components
 
-templ Nav() {
+type NavItemType struct {
+	Text string
+	Link string
+}
+
+templ Nav(navItems []NavItemType) {
 	<nav class="flex w-full text-2xl justify-between py-5">
 		<a class="underline" href="/">
 			<h1 class="text-3xl">david</h1>
 		</a>
 		<ul class="flex gap-4">
-			<li>
-				<a class="hover:underline" href="/about">
-					About
-				</a>
-			</li>
-			<li>
-				<a class="hover:underline" href="/resume">
-					Resume
-				</a>
-			</li>
+			for _,navItem := range navItems {
+				@NavItem(navItem)
+			}
 		</ul>
 	</nav>
 }
