@@ -2,10 +2,10 @@ package pages
 
 import "github.com/DevitoDbug/portfolio/internals/web/layout"
 
-templ BlogPage(rawHtml string) {
+templ Error(errorMassage string) {
 	@layout.App() {
-		<div id="blog" class="">
-			@templ.Raw(rawHtml)
+		<div>
+			{ errorMassage }
 		</div>
 	}
 }

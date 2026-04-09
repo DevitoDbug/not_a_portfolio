@@ -1,14 +1,28 @@
 package pages
 
 import "github.com/DevitoDbug/portfolio/internals/web/layout"
+import "github.com/DevitoDbug/portfolio/internals/web/components"
 
-templ BlogsPage(blogs []string) {
+type Blog struct {
+	Title     string
+	CreatedAt string
+	FileName  string
+}
+
+templ BlogsPage(rootPath string, blogs []Blog) {
 	@layout.App() {
 		<div>
-			<h1>Be blogs page</h1>
-			for index,blog := range blogs {
-				<p>{ index }. { blog }</p>
-			}
+			<ul class="flex flex-col gap-4">
+				for _,blog := range blogs {
+					<li class="flex flex-col">
+						@components.BlogLink(components.BlogLinkType{
+							Link:      "/blogs/" + blog.FileName,
+							BlogTitle: blog.Title,
+							Date:      blog.CreatedAt,
+						})
+					</li>
+				}
+			</ul>
 		</div>
 	}
 }

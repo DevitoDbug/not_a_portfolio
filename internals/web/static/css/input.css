@@ -1,28 +1,32 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "EB Garamond";
-    src: url(/static/fonts/EBGaramond-regular.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "EB Garamond";
+  src: url(/static/fonts/EBGaramond-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Open Sans";
-    src: url(/static/fonts/OpenSans-Normal.woff2) format("woff2");
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Open Sans";
+  src: url(/static/fonts/OpenSans-Normal.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "JetBrains Mono";
-    src: url(/static/fonts/JetBrainsMono-Normal.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "JetBrains Mono";
+  src: url(/static/fonts/JetBrainsMono-Normal.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @theme {
-    --font-garamond: "EB Garamond", serif;
-    --font-sans-open: "Open Sans", sans-serif;
-    --font-jetbrains-mono: "JetBrains Mono", serif;
+  --font-garamond: "EB Garamond", serif;
+  --font-sans-open: "Open Sans", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", serif;
+}
+
+#blog hr {
+  background: red;
 }
