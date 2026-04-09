@@ -1,0 +1,17 @@
+package components
+
+type BlogLinkType struct {
+	Link      string
+	BlogTitle string
+	Date      string
+}
+
+templ BlogLink(item BlogLinkType) {
+	<span class="text-2xl font-sans-open text-wrap">{ item.Date }</span>
+	<a
+		href={ item.Link }
+		class="hover:underline text-[#ba3925] text-4xl font-sans-open"
+	>
+		{ item.BlogTitle }
+	</a>
+}
