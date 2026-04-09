@@ -25,8 +25,31 @@
   --font-garamond: "EB Garamond", serif;
   --font-sans-open: "Open Sans", sans-serif;
   --font-jetbrains-mono: "JetBrains Mono", serif;
+  --dark-orange: #ba3925;
+  --dirty-gray: #828282;
 }
 
-#blog hr {
-  background: red;
+@layer utilities {
+  #blog {
+    line-height: 1.7;
+  }
+
+  #blog h1 {
+    font: var(--font-sans-open);
+    color: var(--dark-orange);
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  #blog h2 {
+    font: var(--font-sans-open);
+    color: var(--dirty-gray);
+    font-size: 1.5rem;
+    padding-bottom: 1.6rem;
+  }
+
+  #blog p {
+    padding-bottom: 1.7rem;
+  }
 }

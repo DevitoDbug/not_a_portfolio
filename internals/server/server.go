@@ -56,7 +56,7 @@ func (s *Server) StartServer() error {
 	s.router.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
 	s.router.Group(func(r chi.Router) {
-		r.Get("/", s.Api.IndexHandler)
+		r.Get("/", s.Api.BlogsHandler)
 		r.Get("/about", s.Api.AboutHandler)
 		r.Get("/resume", s.Api.ResumeHandler)
 		r.Get("/blogs", s.Api.BlogsHandler)

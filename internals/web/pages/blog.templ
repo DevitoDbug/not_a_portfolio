@@ -4,7 +4,7 @@ import "github.com/DevitoDbug/portfolio/internals/web/layout"
 
 templ BlogPage(rawHtml string) {
 	@layout.App() {
-		<div id="blog" class="">
+		<div id="blog">
 			@templ.Raw(rawHtml)
 		</div>
 	}
