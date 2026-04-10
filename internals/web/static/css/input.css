@@ -30,6 +30,10 @@
 }
 
 @layer utilities {
+  body {
+    font-size-adjust: ex-height 0.53;
+  }
+
   #blog {
     line-height: 1.7;
   }
@@ -43,7 +47,7 @@
   }
 
   #blog h2 {
-    font: var(--font-sans-open);
+    font-family: var(--font-sans-open);
     color: var(--dirty-gray);
     font-size: 1.5rem;
     padding-bottom: 1.6rem;
@@ -51,5 +55,16 @@
 
   #blog p {
     padding-bottom: 1.7rem;
+    font-family: var(--font-garamond);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  #blog a {
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  #blog a:hover {
+    color: var(--dark-orange);
   }
 }

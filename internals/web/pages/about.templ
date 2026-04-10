@@ -5,33 +5,33 @@ import "github.com/DevitoDbug/portfolio/internals/web/layout"
 templ AboutPage() {
 	@layout.App() {
 		<div class="flex gap-2 flex-col">
-			<h2 class="text-[#ba3925] text-3xl">Hello !</h2>
+			<h2 class="text-(--dark-orange) text-3xl">Hello !</h2>
 			<div>
 				<img
 					src="/static/assets/david.webp"
 					alt="profile"
 					class="w-40 h-44 object-cover float-left mr-2 mb-0 "
 				/>
-				<p class="text-wrap leading-7 text-2xl">
+				<p class="text-wrap leading-7">
 					I am David Ochieng, a programmer who loves things that work and embraces the reckless pursuit of becoming.
 					You can find me on 
 					<a
 						href="https://github.com/DevitoDbug"
-						class="underline"
+						class="underline hover:text-(--dark-orange) "
 					>
 						GitHub
 					</a>
 					or send me 
 					<a
 						href="mailto:davidochiengy@gmail.com?subject=Hello&body=Hi David"
-						class="underline"
+						class="underline hover:text-(--dark-orange)"
 					>
 						an email
 					</a>
 					. If you want to find me in real life, I am in Nairobi, Kenya. Though this site wasn’t made to be a resume, I like to think of it as a bit of polymorphism. You can find my resume 
 					<a
-						href="#"
-						class="underline"
+						href="/resume"
+						class="underline hover:text-(--dark-orange)"
 					>
 						here
 					</a>
@@ -40,7 +40,7 @@ templ AboutPage() {
 			<div class="flex flex-wrap justify-center gap-5 pt-4">
 				<a
 					href="mailto:davidochiengy@gmail.com?subject=Hello&body=Hi David"
-					class="whitespace-nowrap text-2xl flex gap-2 items-center hover:underline"
+					class="whitespace-nowrap flex gap-1 items-center hover:underline"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="30" width="30">
 						<!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -55,7 +55,7 @@ templ AboutPage() {
 				</a>
 				<a
 					href="https://github.com/DevitoDbug"
-					class="whitespace-nowrap text-2xl flex gap-1 items-center hover:underline"
+					class="whitespace-nowrap flex gap-1 items-center hover:underline"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" heigh="30" width="30">
 						<!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -70,7 +70,7 @@ templ AboutPage() {
 				</a>
 				<a
 					href="https://www.linkedin.com/in/david-ochieng-a4402b234/"
-					class="whitespace-nowrap text-2xl flex gap-1 items-center hover:underline"
+					class="whitespace-nowrap flex gap-1 items-center hover:underline"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" heigh="30" width="30">
 						<!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
