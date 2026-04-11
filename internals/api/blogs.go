@@ -33,6 +33,11 @@ func (a *Api) BlogsHandler(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
+		if fileInfo.Name()[0] == '.' || fileInfo.Name()[0] == '_' {
+			fmt.Printf("Dot or underscore file noted")
+			continue
+		}
+
 		blogInfo, err := utils.ReadBlogDetails(rootBlogDir + fileInfo.Name())
 		if err != nil {
 			continue
