@@ -39,7 +39,7 @@
   }
 
   #blog h1 {
-    font: var(--font-sans-open);
+    font-family: var(--font-sans-open);
     color: var(--dark-orange);
     font-size: 2rem;
     font-weight: 300;

@@ -13,14 +13,21 @@ templ BlogsPage(rootPath string, blogs []Blog) {
 	@layout.App() {
 		<div>
 			<ul class="flex flex-col gap-4">
-				for _,blog := range blogs {
-					<li class="flex flex-col">
-						@components.BlogLink(components.BlogLinkType{
-							Link:      "/blogs/" + blog.FileName,
-							BlogTitle: blog.Title,
-							Date:      blog.CreatedAt,
-						})
-					</li>
+				if len(blogs) == 0 {
+					<h2 class="pt-48 text flex flex-col justify-center text-center">
+						Writing is hard, almost publishing what i have though 
+						<span class="text-6xl ">:)</span>
+					</h2>
+				} else {
+					for _,blog := range blogs {
+						<li class="flex flex-col">
+							@components.BlogLink(components.BlogLinkType{
+								Link:      "/blogs/" + blog.FileName,
+								BlogTitle: blog.Title,
+								Date:      blog.CreatedAt,
+							})
+						</li>
+					}
 				}
 			</ul>
 		</div>
