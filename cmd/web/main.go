@@ -2,12 +2,20 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/DevitoDbug/portfolio/internals/server"
 )
 
 func main() {
-	port := ":8081"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8081"
+	}
+	if port[0] != ':' {
+		port = ":" + port
+	}
+
 	server := server.NewServer(port)
 
 	err := server.StartServer()

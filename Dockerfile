@@ -54,8 +54,8 @@ RUN chown -R golang:golang /app
 # Switch to non-root user
 USER golang
 
-# Expose port 8080
-EXPOSE 8080
+# Expose port 8081
+EXPOSE 8081
 
 # Run the web app binary
 CMD ["./app"]
