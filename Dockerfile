@@ -1,5 +1,5 @@
 # Multi-stage build for Go Web App
-FROM golang:1.24-alpine AS builder
+FROM golang:1.26.1-alpine AS builder
 
 # Install necessary packages for building (including Node.js for Tailwind)
 RUN apk add --no-cache git ca-certificates tzdata nodejs npm
