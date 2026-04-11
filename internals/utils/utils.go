@@ -7,5 +7,5 @@ func GetAllowedOrigins(environment string) []string {
 		return []string{"http://*", "https://*"}
 	}
 
-	return nil
+	return []string{"https://*"}
 }
