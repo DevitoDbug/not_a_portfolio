@@ -19,8 +19,8 @@ func (a *Api) BlogsHandler(w http.ResponseWriter, r *http.Request) {
 
 	files, err := os.ReadDir(rootBlogDir)
 	if err != nil {
-		// TODO: create error page
 		fmt.Printf("%v\n", err)
+		_ = pages.BlogsPage(rootBlogDir, blogNames).Render(r.Context(), w)
 		return
 	}
 
