@@ -16,9 +16,7 @@ and end up stored in memory?
 
 Just like many other technologies, Redis uses a client server architecture. In our case, the 
 **Redis CLI** is the client and the **Redis Server** is the server. That means commands 
-must travel over a network. But networks don't send words, they send bytes. 
-
-This creates a huge problem:
+must travel over a network. But networks don't send words, they send bytes. This creates a huge problem;
 How does the server know where a command starts, where it ends and what each part means?
 
 Before Redis can actually store anything, it must first **parse** the incoming data into a structure
