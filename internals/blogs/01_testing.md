@@ -20,7 +20,7 @@ must travel over a network. But networks don't send words, they send bytes. This
 How does the server know where a command starts, where it ends and what each part means?
 
 Before Redis can actually store anything, it must first **parse** the incoming data into a structure
-(usually a data type) it understands. In my case, building the redis server in **GO** meant converting 
+(usually a data type) it understands. In my case, building the redis server in Go meant converting 
 the incoming byte stream into a Go struct.
 
 Ladies and gentlemen, this is exactly where **RESP (Redis Serialization Protocol)** comes in.
