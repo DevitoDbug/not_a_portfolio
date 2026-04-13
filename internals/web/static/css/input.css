@@ -59,6 +59,15 @@
     font-size: 1rem;
     font-weight: 400;
   }
+  #blog p:has(+ ul) {
+    padding-bottom: 0;
+  }
+  #blog p:has(+ ol) {
+    padding-bottom: 0;
+  }
+  #blog p:has(+ pre > code) {
+    padding-bottom: 0;
+  }
 
   #blog a {
     text-decoration: underline;
@@ -66,5 +75,16 @@
   }
   #blog a:hover {
     color: var(--dark-orange);
+  }
+
+  #blog code {
+    display: block;
+    color: var(--dark-orange);
+  }
+
+  #blog ul {
+    list-style: disc;
+    padding-left: 10%;
+    padding-bottom: 1rem;
   }
 }
