@@ -106,23 +106,21 @@ The server reads `*3\r\n`, knows to expect 3 elements, then reads each `$<length
 
 RESP uses the **first byte** of each value to communicate its type. Five types cover everything Redis needs:
 
-| Prefix | Type          | Example                  |
-|--------|---------------|--------------------------|
-| `*`    | Array         | `*3\r\n...`              |
-| `$`    | Bulk String   | `$5\r\nhello\r\n`        |
-| `+`    | Simple String | `+OK\r\n`                |
-| `:`    | Integer       | `:42\r\n`                |
-| `-`    | Error         | `-ERR unknown command\r\n` |
+- `*` — Array
+- `$` — Bulk String
+- `+` — Simple String
+- `:` — Integer
+- `-` — Error
 
-**Arrays (`*`)** are how commands are sent. Every Redis command arrives as an array of bulk strings.
+**Arrays** (prefix `*`) are how commands are sent. Every Redis command arrives as an array of bulk strings.
 
-**Bulk Strings (`$`)** carry actual data. They always include the byte length upfront, so the parser knows exactly how many bytes to read — no guessing.
+**Bulk Strings** (prefix `$`) carry actual data. They always include the byte length upfront, so the parser knows exactly how many bytes to read — no guessing.
 
-**Simple Strings (`+`)** are short, length-free strings. They can't contain `\r\n` inside them, which is fine because they're only used for simple fixed responses.
+**Simple Strings** (prefix `+`) are short, length-free strings. They can't contain `\r\n` inside them, which is fine because they're only used for simple fixed responses.
 
-**Integers (`:`)** send a number directly in the text, terminated by `\r\n`.
+**Integers** (prefix `:`) send a number directly in the text, terminated by `\r\n`.
 
-**Errors (`-`)** look like simple strings but signal that something went wrong.
+**Errors** (prefix `-`) look like simple strings but signal that something went wrong.
 
 # Why Two String Types?
 
