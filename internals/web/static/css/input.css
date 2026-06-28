@@ -78,8 +78,11 @@
   }
 
   #blog code {
-    display: block;
     color: var(--dark-orange);
+  }
+
+  #blog pre > code {
+    display: block;
   }
 
   #blog ul {
