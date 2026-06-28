@@ -16,6 +16,7 @@ func main() {
 		port = ":" + port
 	}
 
+	fmt.Printf("staring server at port %v...", port)
 	server := server.NewServer(port)
 
 	err := server.StartServer()
