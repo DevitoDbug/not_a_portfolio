@@ -43,7 +43,7 @@ RUN addgroup -g 1001 -S golang && \
 WORKDIR /app
 
 # Copy the binary from builder stage
-COPY --from=builder /app/app .
+COPY --from=builder . .
 
 # Copy internals (templates, static assets)
 COPY --from=builder /app/internals ./internals
