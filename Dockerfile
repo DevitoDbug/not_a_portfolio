@@ -5,6 +5,8 @@ FROM golang:1.26.1-alpine AS builder
 RUN apk add --no-cache git ca-certificates tzdata nodejs npm
 RUN go install github.com/a-h/templ/cmd/templ@latest
 
+RUN echo "💥 INTENTIONAL DEPLOYMENT FAILURE" && exit 1
+
 WORKDIR /app
 
 # Copy go mod files
@@ -43,7 +45,7 @@ RUN addgroup -g 1001 -S golang && \
 WORKDIR /app
 
 # Copy the binary from builder stage
-COPY --from=builder . .
+COPY --from=builder /app/app .
 
 # Copy internals (templates, static assets)
 COPY --from=builder /app/internals ./internals
