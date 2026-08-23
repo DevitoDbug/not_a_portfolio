@@ -44,7 +44,7 @@ func (a *Api) ResumeHandler(w http.ResponseWriter, r *http.Request) {
 		},
 		{
 			JobName:    "Sakah",
-			TimePeriod: "Nov 2023 – Jan 2025",
+			TimePeriod: "Feb 2021 – Jan 2025",
 			Links: []pages.Link{
 				"https://sakah.co/",
 				"https://www.llamaevents.com/",
