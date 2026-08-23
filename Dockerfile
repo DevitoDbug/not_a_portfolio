@@ -5,6 +5,8 @@ FROM golang:1.26.1-alpine AS builder
 RUN apk add --no-cache git ca-certificates tzdata nodejs npm
 RUN go install github.com/a-h/templ/cmd/templ@latest
 
+RUN echo "💥 INTENTIONAL DEPLOYMENT FAILURE" && exit 1
+
 WORKDIR /app
 
 # Copy go mod files
