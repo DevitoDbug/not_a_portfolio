@@ -9,7 +9,7 @@ import (
 func (a *Api) ResumeHandler(w http.ResponseWriter, r *http.Request) {
 	experiences := []pages.Experience{
 		{
-			JobName:    "Shupav Group Ltd",
+			JobName:    "Shupav Group Ltd | Full-time",
 			TimePeriod: "from Jan 2025",
 			Links: []pages.Link{
 				"https://app.firmstamp.com/",
@@ -21,7 +21,7 @@ func (a *Api) ResumeHandler(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 		{
-			JobName:    "Sphere Labs | Remote — Hong Kong",
+			JobName:    "Sphere Labs | Remote — Hong Kong | Part-time",
 			TimePeriod: "Sep 2025 to Jan 2026",
 			Links: []pages.Link{
 				"https://www.simbank.com/",
@@ -34,8 +34,8 @@ func (a *Api) ResumeHandler(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 		{
-			JobName:    "Mobipine",
-			TimePeriod: "June 2024 – May 2025",
+			JobName:    "Mobipine | Full-time",
+			TimePeriod: "June 2024 – Aug 2025",
 			Links:      []pages.Link{},
 			Description: []pages.Paragraph{
 				"Built custom Odoo modules in Python across internal business systems, including integrating ZKTeco biometric hardware directly with the Odoo HR module for automated attendance tracking, alongside delivering e-commerce platforms and custom applications in Laravel.",
@@ -43,7 +43,7 @@ func (a *Api) ResumeHandler(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 		{
-			JobName:    "Sakah",
+			JobName:    "Sakah | Part-time",
 			TimePeriod: "Feb 2021 – Jan 2025",
 			Links: []pages.Link{
 				"https://sakah.co/",
