@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log/slog"
 	"os"
 
 	"github.com/DevitoDbug/portfolio/internals/server"
@@ -16,7 +17,7 @@ func main() {
 		port = ":" + port
 	}
 
-	fmt.Printf("staring server at port %v...", port)
+	slog.Info("staring server...", "port", port)
 	server := server.NewServer(port)
 
 	err := server.StartServer()
